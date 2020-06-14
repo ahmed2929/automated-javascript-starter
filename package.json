@@ -5,7 +5,6 @@
   "scripts": {
     "vuln": "npm audit --json | npm-audit-helper",
     "start": "nodemon  ./buildScripts/srcServer"
-
   },
   "author": "ahmed khaled",
   "license": "MIT",
@@ -31,8 +30,8 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "jsdom": "^9.8.0",
-    "json-schema-faker": "^0.3.6",
-    "json-server": "^0.8.22",
+    "json-schema-faker": "^0.4.7",
+    "json-server": "^0.16.1",
     "localtunnel": "^1.8.1",
     "mocha": "^3.1.2",
     "nock": "^8.1.0",
