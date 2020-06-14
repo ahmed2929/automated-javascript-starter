@@ -4,7 +4,8 @@
   "description": "JavaScript development environment ",
   "scripts": {
     "vuln": "npm audit --json | npm-audit-helper",
-    "start": "nodemon  ./buildScripts/srcServer"
+    "prestart": "babel-node  ./buildScripts/startMassage",
+    "start": "nodemon --exec babel-node ./buildScripts/srcServer"
   },
   "author": "ahmed khaled",
   "license": "MIT",
