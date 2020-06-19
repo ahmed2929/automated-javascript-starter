@@ -1,11 +1,19 @@
 import express from 'express';
 import open from 'open';
 import path from 'path';
-
+import webpack from 'webpack'
+import config from '../webpack.config.dev'
+const compiler=webpack(config)
 const app=express();
 const port=3000
+
+app.use(require('webpack-dev-middleware')(compiler,{
+    noInfo:true,
+    publicPath:config.output.publicPath
+}))
+
 app.get('/',(req,res)=>{
-    res.sendfile(path.join(__dirname,'../src/index.html'));
+    res.sendFile(path.join(__dirname,'../src/index.html'));
 
 })
 

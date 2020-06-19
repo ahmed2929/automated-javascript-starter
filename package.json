@@ -5,11 +5,15 @@
   "scripts": {
     "vuln": "npm audit --json | npm-audit-helper",
     "prestart": "babel-node  ./buildScripts/startMassage",
-    "start": "nodemon --exec babel-node ./buildScripts/srcServer"
+    "start": "nodemon --exec babel-node ./buildScripts/srcServer",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress buildScripts/testSetup \"src/**/*.test.js\""
   },
   "author": "ahmed khaled",
   "license": "MIT",
   "dependencies": {
+    "mocha-jsdom": "^2.0.0",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
